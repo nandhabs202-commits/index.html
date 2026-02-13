@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Secret Love Box 💖</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body{
+    margin:0;
+    padding:0;
+    font-family:'Segoe UI', sans-serif;
+    text-align:center;
+    color:white;
+    overflow:hidden;
+    background-color: #ffb6c1; /* Pink background */
+}
+
+/* Floating Hearts */
+.heart{
+    position:fixed;
+    bottom:-10px;
+    font-size:20px;
+    animation: float 6s linear infinite;
+}
+
+@keyframes float{
+    0%{ transform:translateY(0); opacity:1;}
+    100%{ transform:translateY(-100vh); opacity:0;}
+}
+
+/* Gift Box */
+.box{
+    font-size:90px;
+    margin-top:60px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.box:hover{
+    transform:scale(1.1);
+}
+
+/* Hidden Sections */
+#passwordSection, #surprise{
+    display:none;
+    margin-top:20px;
+}
+
+input{
+    padding:10px;
+    border:none;
+    border-radius:20px;
+    width:220px;
+    text-align:center;
+}
+
+button{
+    padding:10px 20px;
+    border:none;
+    border-radius:20px;
+    background:white;
+    color:#ff4d6d;
+    cursor:pointer;
+    margin-top:10px;
+    transition:0.3s;
+}
+
+button:hover{
+    background:#ff4d6d;
+    color:white;
+}
+
+p{
+    font-size:18px;
+    line-height:1.6;
+}
+
+.footer{
+    position:fixed;
+    bottom:10px;
+    width:100%;
+    font-size:14px;
+}
+</style>
+</head>
+<body>
+
+<h1>Anandhu ❤️ Nandha</h1>
+<h2>Click the Gift Box My Love 🎁</h2>
+
+<div class="box" onclick="askPassword()">🎁</div>
+
+<div id="passwordSection">
+    <p>Enter Our Secret Password 💕</p>
+    <input type="password" id="password" placeholder="Enter password">
+    <br>
+    <button onclick="checkPassword()">Open My Heart 💖</button>
+    <p id="wrong" style="color:yellow;"></p>
+</div>
+
+<div id="surprise">
+    <p>
+    My Dearest Anandhu ❤️,<br><br>
+    From our first Facebook chat to 7 years together…<br>
+    Maybe this is the last year we have together, but every moment is precious 🥹💖<br><br>
+    Kisses 😘💋, Hugs 🤗, Chocolates 🍫, Roses 🌹<br><br>
+    Forever yours, <br>
+    Nandha 💕
+    </p>
+</div>
+
+<div class="footer">
+Made with Endless Love by Nandha 💕
+</div>
+
+<script>
+function askPassword(){
+    document.getElementById("passwordSection").style.display="block";
+}
+
+function checkPassword(){
+    var pass = document.getElementById("password").value;
+    if(pass === "anandhu123"){
+        document.getElementById("passwordSection").style.display="none";
+        document.getElementById("surprise").style.display="block";
+    } else {
+        document.getElementById("wrong").innerText="Wrong password baby 😜 Try again!";
+    }
+}
+
+/* Floating hearts generator */
+setInterval(function(){
+    var heart = document.createElement("div");
+    heart.className="heart";
+    heart.innerHTML="💖";
+    heart.style.left=Math.random()*100+"vw";
+    heart.style.fontSize=(Math.random()*20+10)+"px";
+    document.body.appendChild(heart);
+    setTimeout(function(){
+        heart.remove();
+    },6000);
+},500);
+</script>
+
+</body>
+</html>
