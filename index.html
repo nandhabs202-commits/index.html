@@ -1,46 +1,139 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Anandhu ❤️</title>
+<title>Anandhu ❤️ Nandha</title>
 
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background: radial-gradient(circle at top, #1a0000, #000000);
-            overflow-x: hidden;
-            font-family: 'Segoe UI', sans-serif;
-            text-align: center;
-            color: white;
-        }
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    background: black;
+    color: white;
+    text-align: center;
+    font-family: 'Segoe UI', sans-serif;
+    overflow: hidden;
+}
 
-        h1 {
-            margin-top: 40px;
-            font-size: 60px;
-            color: #ff1a1a;
-            text-shadow: 0 0 20px red, 0 0 40px white;
-            animation: glow 2s infinite alternate;
-        }
+h1 {
+    font-size: 50px;
+    color: red;
+    animation: glow 2s infinite alternate;
+}
 
-        @keyframes glow {
-            from { text-shadow: 0 0 10px red; }
-            to { text-shadow: 0 0 30px white, 0 0 50px red; }
-        }
+h2 {
+    font-size: 30px;
+    color: white;
+}
 
-        .message {
-            width: 80%;
-            margin: auto;
-            font-size: 20px;
-            margin-top: 20px;
-            line-height: 1.6;
-        }
+@keyframes glow {
+    from { text-shadow: 0 0 10px red; }
+    to { text-shadow: 0 0 30px white; }
+}
 
-        button {
-            margin-top: 30px;
-            padding: 15px 30px;
-            font-size: 18px;
-            background: red;
-            color: white;
-            border: none;
-            border-radius: 30px;
-            cursor: po
+.heart {
+    position: fixed;
+    top: -10px;
+    font-size: 20px;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh);
+    }
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 20px;
+    background: red;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+img {
+    width: 250px;
+    border-radius: 20px;
+    margin-top: 20px;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+}
+
+footer {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    font-size: 20px;
+    color: red;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Anandhu ❤️</h1>
+
+<h2>For your Nandha 💕</h2>
+
+<p>
+From the first "Hi" on Facebook  
+To the countless roadside meetings,  
+To 7 beautiful years of love...  
+
+You are my happiness.  
+You are my safe place.  
+You are my forever.  
+
+No distance can reduce my love for you.  
+Every heartbeat whispers your name ❤️
+</p>
+
+<img src="https://i.imgur.com/8Km9tLL.jpg">
+
+<br><br>
+
+<button onclick="showLove()">Click My Love 💖</button>
+
+<footer>Anandhu ❤️</footer>
+
+<audio autoplay loop>
+<source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mp3">
+</audio>
+
+<script>
+function showLove() {
+    alert("Anandhu ❤️\n\nYou are my today, my tomorrow, and my forever.\nI love you endlessly 💕\nForever yours,\nNandha 💖");
+}
+
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = Math.random() > 0.5 ? "❤️" : "🤍";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = Math.random() * 3 + 2 + "s";
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 5000);
+}
+
+setInterval(createHeart, 300);
+</script>
+
+</body>
+</html>
