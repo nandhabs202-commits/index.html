@@ -1,114 +1,127 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Happy Valentine My Anandhu ❤️</title>
+<title>For My Anandhu ❤️</title>
 
 <style>
-body{
-margin:0;
-padding:0;
-background:linear-gradient(to bottom,#000000,#8b0000);
-color:white;
-text-align:center;
-font-family:Arial;
-overflow:hidden;
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #ffdde1, #ee9ca7);
+    font-family: 'Segoe UI', sans-serif;
+    text-align: center;
+    overflow: hidden;
 }
 
-h1{
-margin-top:60px;
-font-size:48px;
-color:white;
-animation: glow 2s infinite alternate;
+h1 {
+    margin-top: 40px;
+    font-size: 40px;
+    color: #b30000;
+    animation: glow 2s infinite alternate;
 }
 
-@keyframes glow{
-from{ text-shadow:0 0 10px red;}
-to{ text-shadow:0 0 25px pink;}
+@keyframes glow {
+    from { text-shadow: 0 0 10px red; }
+    to { text-shadow: 0 0 20px white; }
 }
 
-p{
-font-size:20px;
-padding:20px;
-line-height:1.6;
+.love-text {
+    margin-top: 20px;
+    font-size: 22px;
+    color: #800000;
+    padding: 20px;
 }
 
-button{
-padding:15px 30px;
-font-size:18px;
-background:white;
-color:red;
-border:none;
-border-radius:30px;
-cursor:pointer;
-margin-top:20px;
+button {
+    margin-top: 30px;
+    padding: 15px 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 30px;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-button:hover{
-background:red;
-color:white;
+button:hover {
+    background-color: darkred;
+    transform: scale(1.1);
 }
 
-.love{
-position:fixed;
-top:-10px;
-font-size:20px;
-animation: fall linear infinite;
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px red;
+    font-size: 20px;
+    color: #b30000;
+    animation: pop 0.5s ease;
 }
 
-@keyframes fall{
-to{
-transform:translateY(100vh);
-}
-}
-
-footer{
-position:fixed;
-bottom:20px;
-width:100%;
-font-size:22px;
-color:white;
+@keyframes pop {
+    from { transform: translate(-50%, -50%) scale(0.5); }
+    to { transform: translate(-50%, -50%) scale(1); }
 }
 
-.popup{
-display:none;
-position:fixed;
-top:50%;
-left:50%;
-transform:translate(-50%,-50%);
-background:white;
-color:red;
-padding:30px;
-border-radius:20px;
-font-size:22px;
-box-shadow:0 0 20px pink;
+.heart {
+    position: fixed;
+    top: -10px;
+    font-size: 20px;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh);
+    }
+}
+
+footer {
+    position: fixed;
+    bottom: 20px;
+    width: 100%;
+    font-size: 28px;
+    color: #b30000;
+    animation: glow 2s infinite alternate;
 }
 </style>
 </head>
 
 <body>
 
-<h1>Happy Valentine’s Day Anandhu ❤️</h1>
+<h1>Anandhu ❤️</h1>
 
-<p>
-You are my love ❤️  
-Always love you so much 😘  
-You are my happiness, my heart, my forever 💕  
+<div class="love-text">
+You are my love forever ❤️ <br>
+Always love you so much 💕 <br><br>
+Kisses 💋 Hugs 🤗 <br>
+Chocolates 🍫 and Roses 🌹 <br><br>
+Love you so muchhhh 💖 <br>
+Ummaaaaaaaa 💋💋💋
+</div>
 
-Kisses 😘  
-Hugs 🤗  
-Chocolate 🍫  
-Roses 🌹  
-
-Love you so much...  
-Ummaaaaaaa 💋💋💋
-</p>
-
-<button onclick="showLove()">Click For Surprise 💝</button>
+<button onclick="showLove()">Open Surprise 💝</button>
 
 <div class="popup" id="loveMessage">
-You are mine forever ❤️  
-For your Nandha 💕  
-Endless kisses 😘 Ummaaaaa 💋
+💖 My Sweet Anandhu 💖 <br><br>
+
+You are my always and forever ❤️ <br>
+My happiness, my heart, my everything 💕 <br><br>
+
+Kissessssss 💋💋💋💋💋💋💋 <br>
+Ummaaaaaaaa 💋💋💋💋💋 <br><br>
+
+Hugs 🤗🤗🤗 <br>
+Chocolates 🍫🍫 <br>
+Roses 🌹🌹🌹 <br><br>
+
+Love you so muchhhhh 😘😘😘
 </div>
 
 <footer>
@@ -116,4 +129,29 @@ Anandhu ❤️
 </footer>
 
 <audio autoplay loop>
-<source src="https://
+<source src="https://www2.cs.uic.edu/~i101/SoundFiles/Perfect.wav" type="audio/wav">
+</audio>
+
+<script>
+function showLove() {
+    document.getElementById("loveMessage").style.display = "block";
+}
+
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = Math.random() > 0.5 ? "❤️" : "🤍";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (Math.random() * 3 + 2) + "s";
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 5000);
+}
+
+setInterval(createHeart, 300);
+</script>
+
+</body>
+</html>
