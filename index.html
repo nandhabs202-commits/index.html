@@ -1,48 +1,119 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>My Forever Valentine ❤️</title>
+<title>Happy Valentine My Anandhu ❤️</title>
+
 <style>
-body {
-  background: linear-gradient(to right, #ff9a9e, #fecfef);
-  text-align: center;
-  font-family: Arial;
-  color: white;
+body{
+margin:0;
+padding:0;
+background:linear-gradient(to bottom,#000000,#8b0000);
+color:white;
+text-align:center;
+font-family:Arial;
+overflow:hidden;
 }
-h1 {
-  font-size: 40px;
+
+h1{
+margin-top:60px;
+font-size:48px;
+color:white;
+animation: glow 2s infinite alternate;
 }
-button {
-  background-color: red;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  font-size: 18px;
-  border-radius: 10px;
+
+@keyframes glow{
+from{ text-shadow:0 0 10px red;}
+to{ text-shadow:0 0 25px pink;}
 }
-.hidden {
-  display: none;
+
+p{
+font-size:20px;
+padding:20px;
+line-height:1.6;
+}
+
+button{
+padding:15px 30px;
+font-size:18px;
+background:white;
+color:red;
+border:none;
+border-radius:30px;
+cursor:pointer;
+margin-top:20px;
+}
+
+button:hover{
+background:red;
+color:white;
+}
+
+.love{
+position:fixed;
+top:-10px;
+font-size:20px;
+animation: fall linear infinite;
+}
+
+@keyframes fall{
+to{
+transform:translateY(100vh);
+}
+}
+
+footer{
+position:fixed;
+bottom:20px;
+width:100%;
+font-size:22px;
+color:white;
+}
+
+.popup{
+display:none;
+position:fixed;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+background:white;
+color:red;
+padding:30px;
+border-radius:20px;
+font-size:22px;
+box-shadow:0 0 20px pink;
 }
 </style>
 </head>
 
 <body>
 
-<h1>Happy Valentine's Day My Love ❤️</h1>
-<p>Even miles apart, my heart is always with you 💕</p>
+<h1>Happy Valentine’s Day Anandhu ❤️</h1>
 
-<button onclick="showMessage()">Click if you love me 😘</button>
+<p>
+You are my love ❤️  
+Always love you so much 😘  
+You are my happiness, my heart, my forever 💕  
 
-<p id="loveMessage" class="hidden">
-You are my forever and always 💖  
-Distance cannot separate our hearts ❤️
+Kisses 😘  
+Hugs 🤗  
+Chocolate 🍫  
+Roses 🌹  
+
+Love you so much...  
+Ummaaaaaaa 💋💋💋
 </p>
 
-<script>
-function showMessage() {
-  document.getElementById("loveMessage").style.display = "block";
-}
-</script>
+<button onclick="showLove()">Click For Surprise 💝</button>
 
-</body>
-</html>
+<div class="popup" id="loveMessage">
+You are mine forever ❤️  
+For your Nandha 💕  
+Endless kisses 😘 Ummaaaaa 💋
+</div>
+
+<footer>
+Anandhu ❤️
+</footer>
+
+<audio autoplay loop>
+<source src="https://
